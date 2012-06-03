@@ -1,5 +1,6 @@
 # coding: utf-8
 require './vending_machine'
+require './drink'
 require './money'
 
 describe VendingMachine do
@@ -51,8 +52,16 @@ describe VendingMachine do
 end
 
 describe Drink do
-  before do
-    @drinik = Drink.new
+
+  it "コーラの名前と単価を取得する" do
+    coke = Drink.new("コーラ", 120)
+    coke.name.should == "コーラ"
+    coke.price.should == 120
+  end
+
+  it "コーラのマスター作っちゃう" do
+    COKE.name.should == "コーラ"
+    COKE.price.should == 120
   end
 
 end
