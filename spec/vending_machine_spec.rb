@@ -31,5 +31,22 @@ describe VendingMachine do
     @vending_machine.throw(Money::JUUEN)
     @vending_machine.total.should == 20
   end
+
+  it "10円投入して払い戻すと10円戻ってきて、投入額の合計は0にリセットされる" do
+    @vending_machine.throw(Money::JUUEN)
+    @vending_machine.cancel.should == 10
+
+    @vending_machine.total.should == 0
+  end
+
+  it "20円投入して払い戻すと20円戻ってきて、投入額の合計は0にリセットされる" do
+    @vending_machine.throw(Money::JUUEN)
+    @vending_machine.throw(Money::JUUEN)
+    @vending_machine.cancel.should == 20
+
+    @vending_machine.total.should == 0
+  end
+
+
 end
 
