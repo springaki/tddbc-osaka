@@ -23,8 +23,10 @@ describe VendingMachine do
   it "自動販売機には、1000円札を投入できる" do
     @vending_machine.throw(Money::SENEN).should == "success"
   end
-  it "自動販売機には、5000円札は投入できない" do
-    @vending_machine.throw(Money::GOSENEN).should == "failure"
+  it "自動販売機には、5000円札は投入できないし、加算もされない" do
+    @vending_machine.throw(Money::JUUEN)
+    @vending_machine.throw(Money::GOSENEN).should == "5000"
+    @vending_machine.total.should == 10
   end
   it "自販機にはお金を複数回投入できる" do
     @vending_machine.throw(Money::JUUEN)

@@ -14,7 +14,7 @@ class VendingMachine
 			@amount += amount
       "success"
     else
-      "failure"
+      amount.to_s
     end
   end
 
