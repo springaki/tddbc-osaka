@@ -53,15 +53,9 @@ end
 
 describe Drink do
 
-  it "コーラの名前と単価を取得する" do
-    coke = Drink.new("コーラ", 120)
-    coke.name.should == "コーラ"
-    coke.price.should == 120
-  end
-
   it "コーラのマスター作っちゃう" do
-    COKE.name.should == "コーラ"
-    COKE.price.should == 120
+    Drink::COKE.name.should == "コーラ"
+    Drink::COKE.price.should == 120
   end
 
 end
