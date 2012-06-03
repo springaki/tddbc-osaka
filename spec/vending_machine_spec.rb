@@ -48,7 +48,12 @@ describe VendingMachine do
 
     @vending_machine.total.should == 0
   end
+end
 
+describe Drink do
+  before do
+    @drinik = Drink.new
+  end
 
 end
 
