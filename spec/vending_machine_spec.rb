@@ -8,6 +8,7 @@ describe VendingMachine do
   end
   it "自動販売機には、10円玉を投入できる" do
     @vending_machine.throw(Money::JUUEN).should == "success"
+		@vending_machine.total.should == 10
   end
   it "自動販売機には、50円玉を投入できる" do
     @vending_machine.throw(Money::GOJUUEN).should == "success"
@@ -29,10 +30,6 @@ describe VendingMachine do
     @vending_machine.throw(Money::JUUEN)
     @vending_machine.throw(Money::JUUEN)
     @vending_machine.total.should == 20
-  end
-  it "自販機に投入された金額の総計を取得できる" do
-    @vending_machine.throw(Money::JUUEN)
-		@vending_machine.total.should == 10
   end
 end
 
