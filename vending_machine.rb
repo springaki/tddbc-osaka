@@ -11,6 +11,7 @@ class VendingMachine
     end
   end
   def total
+		Money::JUUEN
   end
   def withdrow
   end

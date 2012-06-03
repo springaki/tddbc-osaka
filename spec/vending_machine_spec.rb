@@ -29,7 +29,8 @@ describe VendingMachine do
     @vending_machine.throw(Money::JUUEN)
   end
   it "自販機に投入された金額の総計を取得できる" do
-
+    @vending_machine.throw(Money::JUUEN)
+		@vending_machine.total.should == 10
   end
 end
 
