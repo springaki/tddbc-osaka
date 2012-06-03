@@ -1,4 +1,4 @@
-class VendorMachene
+class VendingMachine
   def throw(amount)
 	  if amount == Money::JUUEN or 
        amount == Money::GOJUUEN or
