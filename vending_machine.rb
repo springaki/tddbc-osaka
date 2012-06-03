@@ -1,4 +1,5 @@
 class VendingMachine
+  attr :amount
   def throw(amount)
 	  if amount == Money::JUUEN or 
        amount == Money::GOJUUEN or
